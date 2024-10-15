@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WooCoinApp</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <h1>Добро пожаловать в WooCoinApp!</h1>
+    <p>WooCoin: <span id="wooCoin">0</span></p>
+    <p>Энергия: <span id="energy">2000/2000</span></p>
+    <button onclick="clickCoin()">Получить WooCoin</button>
+
+    <script>
+        Telegram.WebApp.ready();
+        let wooCoin = 0;
+        let energy = 2000;
+
+        function clickCoin() {
+            if (energy > 0) {
+                wooCoin += 1;
+                energy -= 1;
+                document.getElementById('wooCoin').innerText = wooCoin;
+                document.getElementById('energy').innerText = `${energy}/2000`;
+
+                fetch('/save-progress', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ wooCoin, energy })
+                });
+            } else {
+                alert('Энергия закончилась! Ждите восстановления.');
+            }
+        }
+    </script>
+</body>
+</html>
