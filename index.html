@@ -3,36 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WooCoinApp</title>
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <title>WooCoinApp - SampleScene</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Добро пожаловать в WooCoinApp!</h1>
-    <p>WooCoin: <span id="wooCoin">0</span></p>
-    <p>Энергия: <span id="energy">2000/2000</span></p>
-    <button onclick="clickCoin()">Получить WooCoin</button>
-
-    <script>
-        Telegram.WebApp.ready();
-        let wooCoin = 0;
-        let energy = 2000;
-
-        function clickCoin() {
-            if (energy > 0) {
-                wooCoin += 1;
-                energy -= 1;
-                document.getElementById('wooCoin').innerText = wooCoin;
-                document.getElementById('energy').innerText = `${energy}/2000`;
-
-                fetch('/save-progress', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ wooCoin, energy })
-                });
-            } else {
-                alert('Энергия закончилась! Ждите восстановления.');
-            }
-        }
-    </script>
+    <div id="app">
+        <h1>WooCoinApp!</h1>
+        <p>WooCoin: <span id="wooCoin">0</span></p>
+        <p>Energy: <span id="energy">2000/2000</span></p>
+        <p>BaryCoin: <span id="baryCoin">0</span></p>
+        <p>Уровень: <span id="level">1</span></p>
+        <p>Заработок в час: <span id="hourlyEarnings">0</span> WooCoin</p>
+        <p>Получаемые WooCoin за клик: <span id="coinsPerClick">1</span></p>
+        <button onclick="clickCoin()">Кликни по монетке!</button>
+        <br><br>
+        <button onclick="goToScene('job.html')">РАБОТА</button>
+        <button onclick="goToScene('shop.html')">МАГАЗИН</button>
+        <button onclick="goToScene('prize.html')">ПРИЗЫ</button>
+        <button onclick="goToScene('drop.html')">ДРОП</button>
+        <button onclick="goToScene('ref.html')">РЕФЕРАЛЫ</button>
+    </div>
+    <script src="app.js"></script>
 </body>
 </html>

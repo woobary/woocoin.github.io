@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WooCoinApp - SHOP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Магазин апгрейдов</h1>
+        <p>BaryCoin: <span id="baryCoin">0</span></p>
+        <button onclick="purchaseShopUpgrade('doubleClick', 300, 'BaryCoin')">ДВОЙНОЙ КЛИК (+2 за клик, 300 BaryCoin)</button>
+        <button onclick="purchaseShopUpgrade('autoClick', 900, 'BaryCoin')">AВТОКЛИК (+1 каждую секунду, 900 BaryCoin)</button>
+        <button onclick="purchaseShopUpgrade('restoreEnergy', 250, 'BaryCoin')">СБРОСИТЬ ЭНЕРГИЮ (2000/2000, 250 BaryCoin)</button>
+        <button onclick="purchaseShopUpgrade('baryCoinFaster', 1000, 'WooCoin')">BaryCoin КРАН (+0.01 BaryCoin/сек, 1000 WooCoin)</button>
+        <br><br>
+        <button onclick="goToScene('index.html')">Вернуться</button>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

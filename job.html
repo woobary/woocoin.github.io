@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WooCoinApp - JOB</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>Работа</h1>
+        <h2>Улучшения за WooCoin</h2>
+        <div>
+            <button onclick="purchaseUpgrade('officeCooler', 3000, 600)">Офисный кулер</button>
+            <button onclick="purchaseUpgrade('decor', 6000, 1350)">Декор</button>
+            <button onclick="purchaseUpgrade('lighting', 10000, 2100)">Освещение</button>
+            <button onclick="purchaseUpgrade('fan', 13000, 2650)">Вентилятор</button>
+            <button onclick="purchaseUpgrade('conditioner', 15000, 2900)">Кондиционер</button>
+            <button onclick="purchaseUpgrade('updateComponents', 18000, 3550)">Обновление компонентов</button>
+            <button onclick="purchaseUpgrade('newChairs', 22000, 4100)">Новые стулья</button>
+            <button onclick="purchaseUpgrade('newTables', 24500, 4800)">Новые столы</button>
+            <button onclick="purchaseUpgrade('newComputers', 30000, 6800)">Новые компьютеры</button>
+            <button onclick="purchaseUpgrade('newSafeDeposit', 33500, 7850)">Новая сейфовая ячейка</button>
+            <button onclick="purchaseUpgrade('chillRoom', 35000, 8650)">Чилл-зона</button>
+            <button onclick="purchaseUpgrade('cafeteria', 45000, 11500)">Кафетерий</button>
+        </div>
+        <h2>Улучшения за BaryCoin</h2>
+        <div>
+            <button onclick="purchaseUpgradeBary('assistant', 200, 500)">Ассистент</button>
+            <button onclick="purchaseUpgradeBary('businessAssistant', 400, 1000)">Бизнес-ассистент</button>
+            <button onclick="purchaseUpgradeBary('practicalAssistant', 700, 2000)">Практический ассистент</button>
+            <button onclick="purchaseUpgradeBary('copywriter', 1000, 2800)">Копирайтер</button>
+            <button onclick="purchaseUpgradeBary('hrDirector', 1350, 3500)">HR директор</button>
+            <button onclick="purchaseUpgradeBary('itSpecialist', 1600, 4250)">IT специалист</button>
+            <button onclick="purchaseUpgradeBary('manager', 2000, 5400)">Менеджер</button>
+            <button onclick="purchaseUpgradeBary('marketingSpecialist', 2400, 6200)">Маркетолог</button>
+            <button onclick="purchaseUpgradeBary('salesManager', 3000, 7800)">Менеджер по продажам</button>
+            <button onclick="purchaseUpgradeBary('b2bManager', 3500, 8700)">B2B менеджер</button>
+            <button onclick="purchaseUpgradeBary('financeManager', 4000, 9800)">Финансовый менеджер</button>
+            <button onclick="purchaseUpgradeBary('chiefDirector', 7000, 11700)">Главный директор</button>
+        </div>
+        <br>
+        <button onclick="goToScene('index.html')">Вернуться</button>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
