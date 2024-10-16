@@ -43,20 +43,20 @@ h1, h2 {
 .scroll-container {
     overflow-x: auto;
     white-space: nowrap;
-    padding: 20px 0; /* уменьшите padding */
+    padding: 10px 0;
 }
 
+/* Стили для карточек улучшений */
 .upgrade-card {
     background-color: var(--purple);
     color: #fff;
     width: 200px;
-    height: auto;
     border-radius: 10px;
     margin: 0 10px;
     display: inline-block;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    padding: 15px; /* уменьшите padding */
+    padding: 15px;
 }
 
 .upgrade-card img {
@@ -127,3 +127,4 @@ button:hover {
     color: var(--purple);
     font-family: 'Comfortaa', sans-serif;
 }
+
