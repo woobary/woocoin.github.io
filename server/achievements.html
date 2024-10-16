@@ -1,0 +1,38 @@
+<!-- achievements.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мои достижения</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container text-center mt-5">
+        <h1 class="text-purple mb-4">Мои достижения</h1>
+        <div id="achievementsList" class="info-box"></div>
+        <button class="btn btn-light mt-4" onclick="goToScene('index.html')">Вернуться</button>
+    </div>
+    <script>
+        async function loadAchievements() {
+            try {
+                const response = await fetch('/api/user/achievements');
+                const achievements = await response.json();
+
+                const achievementsList = document.getElementById('achievementsList');
+                achievementsList.innerHTML = achievements.map(a => `
+                    <div class="achievement-card">
+                        <img src="${a.icon}" alt="${a.name}" />
+                        <h3>${a.name}</h3>
+                        <p>${a.description}</p>
+                    </div>
+                `).join('');
+            } catch (error) {
+                console.error('Ошибка загрузки достижений:', error);
+            }
+        }
+
+        window.onload = loadAchievements;
+    </script>
+</body>
+</html>

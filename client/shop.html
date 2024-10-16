@@ -16,28 +16,28 @@
 
         <!-- Отображение количества BaryCoin -->
         <div class="shop-container info-box">
-            <p><img src="../images/drop-cat.png" width="35" height="35" alt=""/><strong>BaryCoin: 0 <span id="baryCoin">&nbsp;</span></strong></p>
+            <p><img src="../images/drop-cat.png" width="35" height="35" alt=""/><strong>BaryCoin: <span id="baryCoin">0</span></strong></p>
         </div>
 
         <!-- Кнопки для покупки апгрейдов -->
         <img src="../images/shop-cat.png" width="153" height="153" alt=""/>
         <div class="info-box mb-4">
-            <button class="btn btn-purple mb-2 upgrade-button">
+            <button class="btn btn-purple mb-2 upgrade-button" onclick="buyUpgrade('autoClick')">
                 <img src="../43-435645_plus-symbol-png-photo-purple-plus-sign-png-transformed.png" width="50" height="50" alt=""/>
                 <span>АВТОКЛИК (+1 каждую секунду)</span>
                 <span class="price">900 BaryCoin</span>
             </button>
-            <button class="btn btn-purple mb-2 upgrade-button">
+            <button class="btn btn-purple mb-2 upgrade-button" onclick="buyUpgrade('restoreEnergy')">
                 <img src="../Ñ_Ð½ÐµÑ_Ð³Ð¸Ñ_-transformed (1).png" width="50" height="50" alt=""/>
                 <span>СБРОСИТЬ ЭНЕРГИЮ (2000/2000)</span>
                 <span class="price">250 BaryCoin</span>
             </button>
-            <button class="btn btn-purple mb-2 upgrade-button">
+            <button class="btn btn-purple mb-2 upgrade-button" onclick="buyUpgrade('baryCoinFaucet')">
                 <img src="../655432_c483_800-transformed.png" width="55" height="50" alt=""/>
                 <span>BaryCoin КРАН (+0.01 BaryCoin/сек)</span>
                 <span class="price">1000 WooCoin</span>
             </button>
-            <button class="btn btn-purple mb-2 upgrade-button">
+            <button class="btn btn-purple mb-2 upgrade-button" onclick="buyUpgrade('doubleClick')">
                 <img src="../png-clipart-aluminum-can-liquid-design-aluminium-manage.png" width="50" height="50" alt=""/>
                 <span>ДВОЙНОЙ КЛИК (+2 за клик)</span>
                 <span class="price">300 BaryCoin</span>
@@ -48,6 +48,60 @@
 
     <!-- Подключение файла со скриптами -->
     <script src="app.js"></script>
+    <script src="common.js"></script>
+    <script>
+        // Пример логики для отображения и обновления количества BaryCoin
+        let baryCoin = parseInt(localStorage.getItem('baryCoin')) || 0;
+        document.getElementById('baryCoin').innerText = baryCoin;
+
+        // Функция покупки апгрейдов
+        function buyUpgrade(upgradeType) {
+            switch (upgradeType) {
+                case 'autoClick':
+                    if (baryCoin >= 900) {
+                        baryCoin -= 900;
+                        // Логика для активации автоклика
+                        alert('Автоклик активирован!');
+                    } else {
+                        alert('Недостаточно BaryCoin для покупки.');
+                    }
+                    break;
+                case 'restoreEnergy':
+                    if (baryCoin >= 250) {
+                        baryCoin -= 250;
+                        // Логика для восстановления энергии
+                        alert('Энергия восстановлена!');
+                    } else {
+                        alert('Недостаточно BaryCoin для покупки.');
+                    }
+                    break;
+                case 'baryCoinFaucet':
+                    if (baryCoin >= 1000) {
+                        baryCoin -= 1000;
+                        // Логика для активации BaryCoin крана
+                        alert('Кран BaryCoin активирован!');
+                    } else {
+                        alert('Недостаточно WooCoin для покупки.');
+                    }
+                    break;
+                case 'doubleClick':
+                    if (baryCoin >= 300) {
+                        baryCoin -= 300;
+                        // Логика для активации двойного клика
+                        alert('Двойной клик активирован!');
+                    } else {
+                        alert('Недостаточно BaryCoin для покупки.');
+                    }
+                    break;
+                default:
+                    alert('Неверный тип апгрейда.');
+            }
+            // Обновляем количество BaryCoin в интерфейсе
+            document.getElementById('baryCoin').innerText = baryCoin;
+            // Сохраняем изменения
+            localStorage.setItem('baryCoin', baryCoin);
+        }
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -43,9 +43,10 @@ h1, h2 {
 .scroll-container {
     overflow-x: auto;
     white-space: nowrap;
-    padding: 20px 0; /* уменьшите padding */
+    padding: 20px 0;
 }
 
+/* Карточки апгрейдов */
 .upgrade-card {
     background-color: var(--purple);
     color: #fff;
@@ -56,7 +57,7 @@ h1, h2 {
     display: inline-block;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    padding: 15px; /* уменьшите padding */
+    padding: 15px;
 }
 
 .upgrade-card img {
@@ -85,13 +86,14 @@ h1, h2 {
 /* Информационная панель в сцене "shop" */
 .shop-container .info-box {
     background-color: #48d4ff;
-    padding: 5px 10px; /* Уменьшенный размер панели */
+    padding: 5px 10px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     color: #333;
-    max-width: 30px; /* Уменьшенная ширина панели */
-    margin: 0 auto; /* Центрирование панели */
+    max-width: 30px;
+    margin: 0 auto;
 }
+
 /* Настройка кнопок апгрейдов */
 .upgrade-button {
     display: flex;
@@ -105,7 +107,7 @@ h1, h2 {
     border-radius: 10px;
     text-align: left;
     font-family: 'Comfortaa', sans-serif;
-    margin-bottom: 10px; /* Отступ между кнопками */
+    margin-bottom: 10px;
 }
 
 /* Стили для цены */
@@ -126,14 +128,14 @@ h1, h2 {
         padding-top: 10px;
     }
 }
+
 /* Кнопки */
 .btn-purple {
     background-color: var(--purple);
     color: rgb(54, 208, 255);
-
-    padding: 1px 5px;
+    padding: 10px 20px;
     border: none;
-    border-radius: 1px;
+    border-radius: 10px;
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -167,10 +169,63 @@ button:hover {
     background-color: var(--blue);
 }
 
+/* Добавить в style.css */
+.achievement-card {
+    background-color: var(--purple);
+    color: #fff;
+    width: 200px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.achievement-card img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+}
+
 /* Дополнительные стили для текста с фиолетовым цветом */
 .text-purple {
     color: var(--purple);
     font-family: 'Comfortaa', sans-serif;
 }
-.shop-container.info-box {
+
+/* Стили для анимации всплывающих сообщений */
+.coin-popup {
+    position: absolute;
+    background-color: yellow;
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 18px;
+    animation: pop-in 0.3s forwards;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.fade-out {
+    animation: fade-out 0.5s forwards;
+}
+
+@keyframes pop-in {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }
