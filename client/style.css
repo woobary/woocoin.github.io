@@ -1,0 +1,176 @@
+/* Основные цвета */
+:root {
+    --sky-blue: #87CEFA;
+    --blue: #007BFF;
+    --purple: #6A0DAD;
+}
+
+/* Оформление body */
+body {
+    background-color: var(--sky-blue);
+    color: rgb(76, 219, 255);
+    font-family: 'Comfortaa', sans-serif;
+}
+
+/* Оформление контейнера */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--blue);
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Оформление заголовков */
+h1, h2 {
+    color: var(--purple);
+    font-weight: bold;
+    font-family: 'Comfortaa', sans-serif;
+}
+
+/* Информационные блоки */
+.info-box {
+    background-color: #48d4ff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #333;
+    font-family: 'Comfortaa', sans-serif;
+}
+
+/* Настройка контейнера с горизонтальным скроллом */
+.scroll-container {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 20px 0; /* уменьшите padding */
+}
+
+.upgrade-card {
+    background-color: var(--purple);
+    color: #fff;
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+    margin: 0 10px;
+    display: inline-block;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 15px; /* уменьшите padding */
+}
+
+.upgrade-card img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.upgrade-title {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.upgrade-benefit {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.upgrade-price {
+    background-color: #fff;
+    color: var(--purple);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* Информационная панель в сцене "shop" */
+.shop-container .info-box {
+    background-color: #48d4ff;
+    padding: 5px 10px; /* Уменьшенный размер панели */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #333;
+    max-width: 30px; /* Уменьшенная ширина панели */
+    margin: 0 auto; /* Центрирование панели */
+}
+/* Настройка кнопок апгрейдов */
+.upgrade-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 600px;
+    padding: 10px 20px;
+    background-color: var(--purple);
+    color: #fff;
+    border-radius: 10px;
+    text-align: left;
+    font-family: 'Comfortaa', sans-serif;
+    margin-bottom: 10px; /* Отступ между кнопками */
+}
+
+/* Стили для цены */
+.price {
+    margin-left: auto;
+    padding-left: 20px;
+    font-weight: bold;
+}
+
+/* Адаптивность */
+@media (max-width: 576px) {
+    .upgrade-button {
+        flex-direction: column;
+        text-align: center;
+    }
+    .price {
+        margin-left: 0;
+        padding-top: 10px;
+    }
+}
+/* Кнопки */
+.btn-purple {
+    background-color: var(--purple);
+    color: rgb(54, 208, 255);
+
+    padding: 1px 5px;
+    border: none;
+    border-radius: 1px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Comfortaa', sans-serif;
+}
+
+/* Стили для изображения монетки */
+.coin-img {
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Анимация для активного состояния изображения */
+.coin-img:active {
+    transform: scale(1.05);
+}
+
+/* Настройка стилей для кнопок с иконками */
+.button-container .btn i {
+    font-size: 2.9rem;
+    color: var(--purple);
+}
+
+/* Изменение цвета иконок при наведении */
+.button-container .btn:hover i {
+    color: var(--blue);
+}
+
+/* Изменение фона кнопок при наведении */
+button:hover {
+    background-color: var(--blue);
+}
+
+/* Дополнительные стили для текста с фиолетовым цветом */
+.text-purple {
+    color: var(--purple);
+    font-family: 'Comfortaa', sans-serif;
+}
+.shop-container.info-box {
+}
