@@ -3,8 +3,9 @@ dotenv.config();
 
 const TelegramBot = require('node-telegram-bot-api');
 const mongoose = require('mongoose');
-const User = require('./models/User');
+const User = require('./models/User'); 
 const translations = require('./translations');
+const userRoutes = require('./routes/userRoutes');
 
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log('MongoDB подключена'))

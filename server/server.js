@@ -5,9 +5,11 @@ const dotenv = require('dotenv');
 const axios = require('axios');
 dotenv.config();
 const bot = require('./telegramBot');
-const User = require('../models/User');
-const userRoutes = require('../routes/userRoutes'); // Подняться на один уровень вверх
-const achievementService = require('./achievementService');
+const User = require('./models/User');
+const userRoutes = require('./routes/userRoutes');
+const Achievement = require('./Achievement');
+
+
 
 const app = express();
 const PORT = process.env.PORT || 5000;

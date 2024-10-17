@@ -1,7 +1,6 @@
-// models/Achievement.js
 const mongoose = require('mongoose');
 const User = require('./models/User');
-const Achievement = require('./models/Achievement');
+const Achievement = require('./Achievement');
 
 const achievementSchema = new mongoose.Schema({
   name: { type: String, required: true },

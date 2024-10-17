@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const User = require('../models/User'); // Импорт модели
+const User = require('../models/User');
+const userRoutes = require('../routes/userRoutes'); // Обратите внимание на './' перед 'routes'
+
 
 // Регистрация пользователя
 router.post('/register', async (req, res) => {
@@ -25,8 +27,8 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-// В routes/userRoutes.js
-app.get('/api/user/achievements', async (req, res) => {
+// Получение достижений пользователя
+router.get('/achievements', async (req, res) => {
   const { chatId } = req.query;
 
   try {
@@ -41,7 +43,6 @@ app.get('/api/user/achievements', async (req, res) => {
     res.status(500).json({ message: 'Произошла ошибка' });
   }
 });
-
 
 // Обновление баланса и энергии
 router.post('/:id/update', async (req, res) => {
